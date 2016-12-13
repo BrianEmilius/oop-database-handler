@@ -12,9 +12,9 @@ class Database {
     }
      
     public static function connect() {
-        if (self::$connection === null) {
+        if (self::$connection === null):
             self::$connection = new PDO("mysql:host=".self::$dbHost.";"."dbname=".self::$dbName, self::$dbUsername, self::$dbPassword); 
-        }
+        endif;
         return self::$connection;
     }
     
