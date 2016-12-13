@@ -16,13 +16,13 @@ $dbh = Database::connect();
 ```
 4. Use the database handler to perform PDO methods
 ```
-$statement = $dbh->prepare("SELECT * FROM table WHERE id = :id");
-$statement->bindParam(":id", $id, PDO::PARAM_INT);
+$preparedStatement = $dbh->prepare("SELECT * FROM table WHERE id = :id");
+$preparedStatement->bindParam(":id", $id, PDO::PARAM_INT);
 
 $id = 1;
 
-$statement->execute();
-var_dump($statement->fetchObject());
+$preparedStatement->execute();
+var_dump($preparedStatement->fetchObject());
 ```
 5. Disconnect
 ```
